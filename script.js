@@ -1,10 +1,12 @@
-const container = document.createElement('div');
+let container = document.createElement('div');
 const row1 = document.createElement('div');
 const col1 = document.createElement('div');
+const button = document.createElement('button')
 
 row1.classList.add('rows');
 container.classList.add('container');
 col1.classList.add('col')
+button.textContent = `Create a New Grid!!`
 
 let col2 = col1.cloneNode(true);
 let col3 = col1.cloneNode(true);
@@ -55,7 +57,7 @@ let row14 = row1.cloneNode(true);
 let row15 = row1.cloneNode(true);
 let row16 = row1.cloneNode(true);
 
-
+document.body.appendChild(button);
 container.appendChild(row1);
 container.appendChild(row2);
 container.appendChild(row3);
@@ -81,5 +83,38 @@ function hover(e){
 divs.forEach((div) => {
     div.addEventListener('mouseenter', hover)
 })
+
+
+function popout(){
+    let size = window.prompt('Enter a new grid size: ');
+    while(isNaN(size) === true){
+        size = window.prompt('Not a valid number: ')
+    }
+    while(size > 100){
+        size = window.prompt('The size is too big, try again: ');
+    }
+
+    document.body.removeChild(container);
+    let newContainer = document.createElement('div');
+    newContainer.classList.add('container');
+    container = newContainer;
+    for (let i = 0; i < size; i++){
+        const newRow = document.createElement('div');        
+        newRow.classList.add('rows');
+        for (let a = 0; a < size; a++){
+            const newCol = document.createElement('div');
+            newCol.classList.add('col');
+            newRow.appendChild(newCol);
+        }
+        newContainer.appendChild(newRow); 
+    }
+    document.body.appendChild(container);
+    const newDivs = document.querySelectorAll('div.col');
+    newDivs.forEach((div) => {
+        div.addEventListener('mouseenter', hover)
+    })  
+    
+}
+button.addEventListener('click', popout);
 
 

@@ -42,3 +42,14 @@
 .grey {
     background-color: grey;
 }
+
+button {
+    padding: 10px;
+    font-size: 15px;
+    background-color: red;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 4px;
+    color: black;
+    margin-bottom: 8px;
+}
