@@ -22,7 +22,6 @@ let col14 = col1.cloneNode(true);
 let col15 = col1.cloneNode(true);
 let col16 = col1.cloneNode(true);
 
-
 row1.appendChild(col1);
 row1.appendChild(col2);
 row1.appendChild(col3);
@@ -59,7 +58,6 @@ let row16 = row1.cloneNode(true);
 
 container.appendChild(row1);
 container.appendChild(row2);
-
 container.appendChild(row3);
 container.appendChild(row4);
 container.appendChild(row5);
@@ -75,5 +73,13 @@ container.appendChild(row14);
 container.appendChild(row15);
 container.appendChild(row16); 
 document.body.appendChild(container);
+
+const divs = document.querySelectorAll('div.col');
+function hover(e){
+    e.target.classList.add('grey');
+}
+divs.forEach((div) => {
+    div.addEventListener('mouseenter', hover)
+})
 
 

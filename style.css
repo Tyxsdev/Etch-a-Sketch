@@ -1,11 +1,9 @@
-body {
-    display: flex;
-}
+
 .container {
     background-color: black;
     display: flex;
-    flex: 1 0 auto;
-    height: auto;
+    width: 960px;
+    height: 960px;
 }
 
 .container:before {
@@ -39,4 +37,8 @@ body {
     content: '';
     display: block;
     padding-top: 100%;
+}
+
+.grey {
+    background-color: grey;
 }
