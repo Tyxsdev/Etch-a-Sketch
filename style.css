@@ -1,3 +1,42 @@
 body {
+    display: flex;
+}
+.container {
     background-color: black;
+    display: flex;
+    flex: 1 0 auto;
+    height: auto;
+}
+
+.container:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.rows {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 0.3px solid black;
+
+}
+.row:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.col {
+    background-color: aqua;
+    flex: 1;
+    flex-direction: row;
+    border-bottom: 0.3px solid black;
+    justify-content: space-around;
+}
+
+.col:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
 }
