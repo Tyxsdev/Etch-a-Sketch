@@ -1,1 +1,1 @@
-# Etch-a-Sketch
+On this project i'll be creating an Etch-a-Sketch of 16x16 grid of square divs, using javascript DOM manipulation and css stylesheet.
