@@ -78,7 +78,10 @@ document.body.appendChild(container);
 
 const divs = document.querySelectorAll('div.col');
 function hover(e){
-    e.target.classList.add('grey');
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    e.target.style.backgroundColor = `rgb(${x},${y},${z})`;
 }
 divs.forEach((div) => {
     div.addEventListener('mouseenter', hover)
@@ -91,7 +94,7 @@ function popout(){
         size = window.prompt('Not a valid number: ')
     }
     while(size > 100){
-        size = window.prompt('The size is too big, try again: ');
+        size = window.prompt('The size is too big:');
     }
 
     document.body.removeChild(container);
